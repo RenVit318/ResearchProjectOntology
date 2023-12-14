@@ -1,0 +1,38 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# Individuals
+ex:ResearchProject rdf:type ex:ResearchProject ;
+    ex:hasLiteratureReview ex:LiteratureReview1 ;
+    ex:hasResearchQuestion ex:Question1, ex:Question2, ex:Question3 ;
+    ex:hasObjective ex:MainObjective ;
+    ex:conductedBy <https://orcid.org/0000-0003-2328-4117> ;
+    ex:title "Automated Permission Control"@en ;
+    dcterms:description "Description of the Project."@en ;
+    dcterms:description "Beschrijving van het Project."@nl .
+
+ex:Question1 rdf:type ex:ResearchQuestion ;
+    ex:title "How do we .."@en ;
+    ex:hasPublication ex:Publication1 ;
+    ex:hasObjective ex:Objective1 ;
+    rdfs:comment "This RQ was setup this way because"@en ;
+    rdfs:comment "Beschrijving hier in het NL"@nl .
+
+ex:Question2 rdf:type ex:ResearchQuestion .
+ex:Question3 rdf:type ex:ResearchQuestion .
+
+ex:MainObjective rdf:type ex:ReserachObjective ;
+    ex:title "Improve the information management of the Dutch government"@en ;
+    ex:title "Verbeteren van de informatiehuishouding van de Nederlandse Overheid"@nl .
+
+ex:Objective1 rdf:type ex:ResearchObjective ;
+    ex:title "Make a .. to show.."@en .
+
+ex:LiteratureReview1 rdf:type ex:LiteratureReview ;
+    ex:title "Literature Review for the definition of the problem gap"@en ;
+    ex:hasFile ex:LitReview1_Excel .
+
+ex:Publication1 rdf:type ex:Publication ;
+    ex:title "Study on the Impact of XYZ on ABC"@en .

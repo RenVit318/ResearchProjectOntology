@@ -1,0 +1,68 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# Classes
+ex:ResearchProject rdf:type rdfs:Class ;
+    rdfs:label "Research Project"@en ;
+    rdfs:label "Onderzoeksproject"@nl .
+
+ex:ResearchObjective rdf:type rdfs:Class ;
+    rdfs:label "Research Objective"@en ;
+    rdfs:label "Onderzoeksdoel"@nl .
+
+ex:Person rdf:type rdfs:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:label "Persoon"@nl .
+
+ex:LiteratureReview rdf:type rdfs:Class ;
+    rdfs:label "Literature Review"@en ;
+    rdfs:label "Literatuuronderzoek"@nl .
+
+ex:Publication rdf:type rdfs:Class ;
+    rdfs:label "Publication"@en ;
+    rdfs:label "Publicatie"@nl .
+
+# Properties
+ex:hasResearchQuestion rdf:type rdf:Property ;
+    rdfs:label "has Research Question"@en ;
+    rdfs:label "heeft Onderzoeks Vraag"@nl ;
+    rdfs:domain ex:ResearchProject ;
+    rdfs:range ex:ResearchObjective .
+
+ex:hasObjective rdf:type rdf:Property ;
+    rdfs:label "has Objective"@en ;
+    rdfs:label "heeft Doel"@nl ;
+    rdfs:domain ex:ResearchProject , ex:ResearchQuestion ;
+    rdfs:range ex:ResearchObjective .
+
+ex:hasLiteratureReview rdf:type rdf:Property ;
+    rdfs:label "has Literature Review"@en ;
+    rdfs:label "heeft Literatuur Onderzoek"@nl ;
+    rdfs:domain ex:ResearchObjective, ex:ResearchQuestion, ex:ReserachProject ;
+    rdfs:range ex:LiteratureReview .
+
+ex:hasPublication rdf:type rdf:Property ;
+    rdfs:label "has Publication"@en ;
+    rdfs:label "heeft Publicatie"@nl ;
+    rdfs:domain ex:ResearchObjective ;
+    rdfs:range ex:Publication .
+
+ex:conductedBy rdf:type rdf:Property ;
+    rdfs:label "conducted by"@en ;
+    rdfs:label "uitgevoerd door"@nl ;
+    rdfs:domain ex:ResearchProject ;
+    rdfs:range ex:Person .
+
+ex:title rdf:type rdf:Property ;
+    rdfs:label "title"@en ;
+    rdfs:label "titel"@nl ;
+    rdfs:domain ex:ResearchProject ;
+    rdf:range rdfs:Literal .
+
+ex:hasFile rdf:type rdf:Property ;
+    rdfs:label "has File"@en ;
+    rdfs:label "heeft Bestand"@nl .
+
+
